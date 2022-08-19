@@ -1,0 +1,63 @@
+nav {
+    background-color: rgb(93, 150, 80);
+    line-height: 50px;
+
+}
+
+nav ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li{
+    flex-grow: 1;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover{
+    background-color:rgb(10, 92, 10);
+}
+
+/*Resalta donde estoy navegando*/
+nav ul li a.activo{
+    background-color: green;
+}
+
+footer{
+    background-color:  rgb(234, 230, 230);
+    color: black;
+    text-align: center;
+}
+
+.resumen_mensual{
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+    padding: 10px;
+    text-align: left;
+}
+
+main p{
+    margin: 10px;
+}
+
+main h2{
+    margin: 10px;
+}
+main h3{
+    margin: 10px;
+}
+
+main img{
+    margin-left: 10px;
+    width: 600px;
+
+}

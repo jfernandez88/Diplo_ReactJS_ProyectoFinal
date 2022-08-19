@@ -1,0 +1,26 @@
+.formulario {
+    display: flex;
+}
+
+.formulario p label {
+    min-width: 85px;
+}
+
+.formulario p input,
+.formulario p textarea {
+    border-radius: 10px;
+    width: 100%;
+    background: white;
+    font-size: 12px;
+
+
+
+}
+
+.formulario input[type="submit"] {
+    background: green;
+    color: white;
+    padding: 5px 15px;
+    width: auto;
+    cursor: pointer;
+}

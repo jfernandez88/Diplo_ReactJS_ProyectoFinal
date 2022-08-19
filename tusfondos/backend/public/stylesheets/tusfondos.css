@@ -1,0 +1,195 @@
+/*
+    font-family: 'Ubuntu', sans-serif;
+*/
+
+
+/*Inicio*/
+header{
+    background-color: rgb(56, 133, 39);
+    color: white;
+}
+
+header h1{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.logo{
+    display: flex;
+    margin: 1px;
+    align-items: flex-end;
+}
+
+body{
+    float: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+    background-color: rgb(93, 150, 80);
+    line-height: 50px;
+
+}
+
+nav ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li{
+    flex-grow: 1;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover{
+    background-color:rgb(10, 92, 10);
+}
+
+/*Resalta donde estoy navegando*/
+nav ul li a.activo{
+    background-color: green;
+}
+
+footer{
+    background-color:  rgb(234, 230, 230);
+    color: black;
+    text-align: center;
+}
+
+.resumen_mensual{
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+    padding: 10px;
+    text-align: left;
+}
+
+main p{
+    margin: 10px;
+}
+
+main h2{
+    margin: 10px;
+}
+main h3{
+    margin: 10px;
+}
+
+main img{
+    margin-left: 10px;
+    width: 600px;
+
+}
+
+
+/*Fin Inicio*/
+
+
+/*Fondos*/
+
+.contenedor{
+	background-color: rgb(213, 233, 210);
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.item{
+	background-color: rgb(111, 184, 117);
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+	font-size: 20px;
+    text-align: center;
+}
+/*Fin Fondos*/
+
+
+/*Destacados*/
+.destacados{
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    align-items:center;
+    
+}
+
+.item_destacados{
+	background-color: rgb(111, 184, 117);
+	width: 300px;
+	height: 200px;
+	margin: 10px;
+	font-size: 20px;
+    text-align: center;
+}
+
+.porcentaje{
+    font-size: 40px;
+    color: green;
+    text-align: center;
+}
+
+.fondos_destacados{
+    color: white;
+    font-size:35px;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    gap: 10px;
+}
+
+/*Fin Destacados*/
+
+/* Inicio Noticias */
+
+.noticias{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+
+}
+
+.noticias img{
+    width: 20%;
+    border: 1px solid black;
+
+}
+
+/* Fin  Noticias */
+
+/* Inicio Formulario */
+.formulario{
+    display: flex;
+}
+
+.formulario p label{
+    min-width: 85px;
+}
+
+.formulario p input,
+.formulario p textarea{
+    border-radius: 10px;
+    width: 100%;
+    background: white;
+    font-size: 12px;
+
+
+
+}
+
+.formulario input[type="submit"]{
+    background: green;
+    color: white;
+    padding: 5px 15px;
+    width: auto;
+    cursor: pointer;
+}
+/* Fin Formulario */

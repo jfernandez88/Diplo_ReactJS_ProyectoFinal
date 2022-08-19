@@ -1,0 +1,19 @@
+header{
+  background-color: rgb(56, 133, 39);
+  color: white;
+}
+
+header h1{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.logo{
+  display: flex;
+  margin: 1px;
+  align-items: flex-end;
+}
+
+body{
+  float: center;
+  font-family: 'Ubuntu', sans-serif;
+}

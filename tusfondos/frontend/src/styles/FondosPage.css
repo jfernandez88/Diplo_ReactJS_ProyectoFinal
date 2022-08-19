@@ -1,0 +1,15 @@
+.contenedor{
+	background-color: rgb(213, 233, 210);
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.item{
+	background-color: rgb(111, 184, 117);
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+	font-size: 20px;
+    text-align: center;
+}

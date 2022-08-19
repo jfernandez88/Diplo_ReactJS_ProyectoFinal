@@ -1,0 +1,12 @@
+.noticias{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+
+}
+
+.noticias img{
+    width: 20%;
+    border: 1px solid black;
+
+}
