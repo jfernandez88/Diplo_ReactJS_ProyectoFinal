@@ -49,7 +49,6 @@ router.post('/agregar', async (req, res, next) => {
 
     var img_id  = '';
     if (req.files && Object.keys(req.files).length > 0)  {
-      console.log("Estoy dentro del if");
       imagen = req.files.imagen;
       img_id  = (await uploader(imagen.tempFilePath)).public_id;
     }
@@ -79,6 +78,10 @@ router.post('/agregar', async (req, res, next) => {
 
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
+  let noticia = await noticiasModel.getNoticiasById(id);
+  if(noticia.img_id){
+    await(destroy(noticia.img_id));
+  }
   await noticiasModel.deleteNoticiaById(id);
   res.redirect('/admin/noticias');
 });
@@ -103,9 +106,9 @@ router.post('/modificar', async (req, res, next) => {
       img_id = null;
       borrar_img_vieja = true;
     } else{
-      if(req.file && Object.keys(req.files).lenght > 0){
+      if (req.files && Object.keys(req.files).length > 0)  {
         imagen = req.files.imagen;
-        img_id = (await uploader(imagen.tempFilePath)).public_id;
+        img_id  = (await uploader(imagen.tempFilePath)).public_id;
         borrar_img_vieja = true;
       }
     }
