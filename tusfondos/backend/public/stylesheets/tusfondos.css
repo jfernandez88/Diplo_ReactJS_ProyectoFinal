@@ -15,8 +15,9 @@ header h1{
 }
 .logo{
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 1px;
-    align-items: flex-end;
 }
 
 body{

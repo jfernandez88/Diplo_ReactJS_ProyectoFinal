@@ -1,17 +1,18 @@
-<div class="container" style="margin-top:100px;">
-    <div class="row">
+<div class="container" style="margin-top:10px;">
+    <div class="row" align="center">
+        <p>Bienvenido al administrador de TusFondos</p>
         <form action="/admin/login" method="post">
         <div class="mb-3">
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputUser" placeholder="Usuario" name="usuario">
+            <div >
+                <input type="text" class="col-form-label" id="inputUser" placeholder="Usuario" name="usuario">
             </div>
         </div>
         <div class="mb-3">
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" name="password">
+            <div >
+                <input type="password" class="col-form-label" aria-describedby="passwordHelpInline" id="inputPassword" placeholder="Contraseña" name="password">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="submit" class="btn btn-outline-primary">Ingresar</button>
         </form>
         {{#if error}}
             <p>Usuario y/o contraseña incorrecto</p>
