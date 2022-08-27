@@ -35,6 +35,8 @@ footer{
     background-color:  rgb(234, 230, 230);
     color: black;
     text-align: center;
+    margin-top:5px;
+    float:end;
 }
 
 .resumen_mensual{

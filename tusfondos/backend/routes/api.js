@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var noticiasModel = require('./../models/noticiasModel');
+var inicioModel = require('./../models/inicioModel');
+var rendimientosModel = require('./../models/rendimientosModel');
 var cloudinary = require('cloudinary').v2;
 var nodemailer = require('nodemailer');
 
@@ -27,6 +29,43 @@ router.get('/noticias', async function (req, res, next) {
   });
   res.json(noticias);
 });
+
+router.get('/inicio', async function (req, res, next) {
+  var inicio = await inicioModel.getInicio();
+
+  inicio = inicio.map(inicio => {
+    if (inicio.img_id) {
+      const imagen = cloudinary.url(inicio.img_id, {
+        width: 960,
+        height: 200,
+        crop: 'fill'
+      });
+      return {
+        ...inicio,
+        imagen
+      }
+    } else {
+      return {
+        ...inicio,
+        imagen: ''
+      }
+    }
+  });
+  res.json(inicio);
+});
+
+router.get('/rendimientos', async function (req, res, next) {
+  var rendimientos = await rendimientosModel.getRendimientos();
+
+  rendimientos = rendimientos.map(rendimientos => {
+      return {
+        ...rendimientos
+      }
+    
+  });
+  res.json(rendimientos);
+});
+
 
 router.post('/contacto', async(req, res) => {
   const mail={

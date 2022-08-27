@@ -7,13 +7,13 @@
 
     <div class="row">
         <div class="col-5">
-            <h4>Administrador de Noticias</h4>
+            <h4>Administrador de Inicio</h4>
         </div>
         <div>
-            <a class="btn btn-outline-success" href="/admin/noticias/agregar"><i class="fa fa-plus"
+            <a class="btn btn-outline-success" href="/admin/inicio/agregar"><i class="fa fa-plus"
                     aria-hidden="true"></i>
-                Noticia</a>
-            <a class="btn btn-outline-secondary" href="/admin/inicio">Inicio
+                Resumen</a>
+            <a class="btn btn-outline-secondary" href="/admin/noticias">Noticias
                 <i class="fas fa-signout-alt"></i></a>
             <a class="btn btn-outline-secondary" href="/admin/rendimientos">Rendimientos
                 <i class="fas fa-signout-alt"></i></a>
@@ -23,7 +23,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <h3>Noticias</h3>
+            <h3>Inicio</h3>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -33,15 +33,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each noticias}}
+                    {{#each inicio}}
                     <tr>
                         <th scope="row">{{id}}</th>
                         <td>{{titulo}}</td>
                         <td>{{{imagen}}}</td>
                         <td class="text-end">
-                            <a class="btn btn-sm btn-secondary" href="/admin/noticias/modificar/{{id}}">
+                            <a class="btn btn-sm btn-secondary" href="/admin/inicio/modificar/{{id}}">
                                 <i class="fa fa-pencil"></i></a>
-                            <a class="btn btn-sm btn-secondary" href="/admin/noticias/eliminar/{{id}}">
+                            <a class="btn btn-sm btn-secondary" href="/admin/inicio/eliminar/{{id}}">
                                 <i class="fa fa-trash"></i></a>
                         </td>
                     </tr>

@@ -13,6 +13,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/noticias');
+var inicioRouter = require('./routes/admin/inicio');
+var rendimientosRouter = require('./routes/admin/rendimientos');
 var apiRouter = require('./routes/api');
 var app = express();
 
@@ -55,6 +57,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/noticias', secured, adminRouter);
+app.use('/admin/inicio', secured, inicioRouter);
+app.use('/admin/rendimientos', secured, rendimientosRouter);
 app.use('/api', cors(), apiRouter);
 
 // catch 404 and forward to error handler

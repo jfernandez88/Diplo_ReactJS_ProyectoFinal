@@ -1,44 +1,42 @@
 var express = require('express');
 var router = express.Router();
-var noticiasModel = require('./../../models/noticiasModel');
+var inicioModel = require('../../models/inicioModel');
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
 const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function (req, res, next) {
-  var noticias = await noticiasModel.getNoticias();
+  var inicio = await inicioModel.getInicio();
 
-  noticias = noticias.map(noticia => {
-    if (noticia.img_id) {
-      const imagen = cloudinary.image(noticia.img_id, {
+  inicio = inicio.map(resumen => {
+    if (resumen.img_id) {
+      const imagen = cloudinary.image(resumen.img_id, {
         width: 100,
         height: 100,
         crop: 'fill'
       });
       return {
-        ...noticia,
+        ...resumen,
         imagen
       }
     } else {
       return {
-        ...noticia,
+        ...resumen,
         imagen: ''
       }
     }
   });
 
-
-
- res.render('admin/noticias', {
+ res.render('admin/inicio', {
     layout: 'admin/layout',
     persona: req.session.nombre,
-    noticias
+    inicio
   });
 });
 
 router.get('/agregar', (req, res, next) => {
-  res.render('admin/manejador_noticias/agregar', {
+  res.render('admin/manejador_inicio/agregar', {
     layout: 'admin/layout',
   });
 });
@@ -53,15 +51,14 @@ router.post('/agregar', async (req, res, next) => {
       img_id  = (await uploader(imagen.tempFilePath)).public_id;
     }
 
-    if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.subtitulo != "" &&
-      req.body.cuerpo != "") {
-      await noticiasModel.insertNoticia({
+    if (req.body.titulo != ""  && req.body.cuerpo != "") {
+      await inicioModel.insertInicio({
         ...req.body,
         img_id
       });
-      res.redirect('/admin/noticias')
+      res.redirect('/admin/inicio')
     } else {
-      res.render('admin/manejador_noticias/agregar', {
+      res.render('admin/manejador_inicio/agregar', {
         layout: 'admin/layout',
         error: true, message: 'Todos los campos son requeridos'
       })
@@ -69,7 +66,7 @@ router.post('/agregar', async (req, res, next) => {
 
   } catch (error) {
     console.log(error)
-    res.render('admin/manejador_noticias/agregar', {
+    res.render('admin/agregar', {
       layout: 'admin/layout',
       error: true, message: 'No se cargo la noticia'
     });
@@ -78,21 +75,21 @@ router.post('/agregar', async (req, res, next) => {
 
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
-  let noticia = await noticiasModel.getNoticiasById(id);
-  if(noticia.img_id){
-    await(destroy(noticia.img_id));
+  let inicio = await inicioModel.getInicioById(id);
+  if(inicio.img_id){
+    await(destroy(inicio.img_id));
   }
-  await noticiasModel.deleteNoticiaById(id);
-  res.redirect('/admin/noticias');
+  await inicioModel.deleteInicioById(id);
+  res.redirect('/admin/inicio');
 });
 
 router.get('/modificar/:id', async (req, res, next) => {
   var id = req.params.id;
-  var noticia = await noticiasModel.getNoticiasById(id);
+  var inicio = await inicioModel.getInicioById(id);
 
-  res.render('admin/manejador_noticias/modificar', {
+  res.render('admin/manejador_inicio/modificar', {
     layout: 'admin/layout',
-    noticia
+    inicio
   })
 });
 
@@ -118,19 +115,18 @@ router.post('/modificar', async (req, res, next) => {
 
     var obj = {
       titulo: req.body.titulo,
-      subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo,
       img_id
     }
-    await noticiasModel.modificarNoticiaById(obj, req.body.id);
-    res.redirect('/admin/noticias');
+    await inicioModel.modificarInicioById(obj, req.body.id);
+    res.redirect('/admin/inicio');
 
   } catch (error) {
     console.log(error)
-    res.render('admin/manejador_noticias/modificar', {
+    res.render('admin/manejador_inicio/modificar', {
       layout: 'admin/layout',
       error: true,
-      message: 'No se modifico la Noticia'
+      message: 'No se modifico el Resumen Mensual'
     })
   }
 });

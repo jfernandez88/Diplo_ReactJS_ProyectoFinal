@@ -7,7 +7,7 @@ import Footer from './components/layout/Footer';
 
 import InicioPage from './pages/InicioPage';
 import NoticiasPage from './pages/NoticiasPage';
-import DestacadosPage from './pages/DestacadosPage';
+import RendimientosPage from './pages/RendimientosPage';
 import ContactoPage from './pages/ContactoPage';
 import FondosPage from './pages/FondosPage';
 
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<InicioPage />} />
           <Route path="NoticiasPage" element={<NoticiasPage />} />
-          <Route path="DestacadosPage" element={<DestacadosPage />} />
+          <Route path="RendimientosPage" element={<RendimientosPage />} />
           <Route path="ContactoPage" element={<ContactoPage />} />
           <Route path="FondosPage" element={<FondosPage />} />
         </Routes>
