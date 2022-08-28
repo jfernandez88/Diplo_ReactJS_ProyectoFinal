@@ -12,8 +12,6 @@ router.get('/noticias', async function (req, res, next) {
   noticias = noticias.map(noticia => {
     if (noticia.img_id) {
       const imagen = cloudinary.url(noticia.img_id, {
-        width: 960,
-        height: 200,
         crop: 'fill'
       });
       return {
@@ -36,8 +34,8 @@ router.get('/inicio', async function (req, res, next) {
   inicio = inicio.map(inicio => {
     if (inicio.img_id) {
       const imagen = cloudinary.url(inicio.img_id, {
-        width: 960,
-        height: 200,
+        //width: 960,
+        //height: 200,
         crop: 'fill'
       });
       return {

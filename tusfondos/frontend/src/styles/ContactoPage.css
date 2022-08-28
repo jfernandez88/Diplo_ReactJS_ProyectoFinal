@@ -1,26 +1,21 @@
 .formulario {
-    display: flex;
-}
+    float:center;
+    margin: 20px;
 
-.formulario p label {
-    min-width: 85px;
 }
-
 .formulario p input,
 .formulario p textarea {
-    border-radius: 10px;
     width: 100%;
     background: white;
-    font-size: 12px;
-
-
+    font-size: 20px;
 
 }
 
 .formulario input[type="submit"] {
     background: green;
     color: white;
-    padding: 5px 15px;
+    padding: 5px 20px;
+    font-size: 20px;
     width: auto;
     cursor: pointer;
 }

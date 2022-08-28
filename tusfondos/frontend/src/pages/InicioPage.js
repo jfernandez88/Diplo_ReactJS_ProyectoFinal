@@ -18,17 +18,17 @@ const InicioPage = (props) => {
     }, []);
 
     return (
-        <section className="holder">
+            <div>
             {
                 loading ? (
                     <p>Cargando...</p>
                 ) : (
                     inicio.map(item => <InicioItem key={item.id}
-                        title={item.titulo} imagen={item.imagen} body={item.cuerpo} />)
+                        title={item.titulo} image={item.imagen} body={item.cuerpo} />)
                 )
 
             }
-        </section>
+            </div>
 
     );
 }

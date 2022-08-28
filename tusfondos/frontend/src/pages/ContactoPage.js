@@ -39,7 +39,9 @@ const ContactoPage = (props) => {
 
     return (
         <main>
-            <h2>Formulario de contacto</h2>
+            <h3>Tu Mensaje</h3>
+            {sending ? <p>Enviando ...</p>: null}
+            {msg ? <p>{msg}</p> : null}
             <div className="formulario">
                 <form method='post' onSubmit={handleSubmit} action='/contacto'>
                     <p>
@@ -62,12 +64,9 @@ const ContactoPage = (props) => {
                         <input type="submit" value="Enviar" />
                     </p>
                 </form>
-                {sending ? <p>Enviando ...</p>: null}
-                {msg ? <p>{msg}</p> : null}
+
             </div>
             <div>
-                <h2>Otras vías de comunicación</h2>
-                <p>Tambien puede contactarnos por:</p>
                 <ul>
                     <li>Telefono 46564151</li>
                     <li>Email: contacto@tusfondos.com.ar</li>

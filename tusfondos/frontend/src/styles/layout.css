@@ -26,7 +26,6 @@ nav ul li a:hover{
     background-color:rgb(10, 92, 10);
 }
 
-/*Resalta donde estoy navegando*/
 nav ul li a.activo{
     background-color: green;
 }
@@ -47,19 +46,16 @@ footer{
     text-align: left;
 }
 
-main p{
-    margin: 10px;
+.Inicio img{
+    width: 500px;
+    width: 500px;
 }
 
-main h2{
-    margin: 10px;
-}
-main h3{
-    margin: 10px;
-}
-
-main img{
-    margin-left: 10px;
-    width: 600px;
-
+.Noticias img{
+    width: 500px;
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }

@@ -1,20 +1,20 @@
 import React from 'react';
 
 const InicioItem = (props) => {
-    const {title, imagen, body} = props;
+    const { title, image, body } = props;
 
-    return(
+    return (
         <div className="Inicio">
             <h1>{title}</h1>
             <hr></hr>
-            <img src={imagen}/>
+            <img src={image} />
             <hr></hr>
-            <div dangerouslySetInnerHTML={{__html: body }} />
-            <hr/>
+            <div dangerouslySetInnerHTML={{ __html: body }} />
+            <hr />
         </div>
 
-        
-        
+
+
     );
 }
 
