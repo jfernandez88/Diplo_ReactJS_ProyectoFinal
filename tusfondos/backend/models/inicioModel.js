@@ -1,7 +1,7 @@
 var pool = require('./bd');
 
 async function getInicio(){
-    var query = "select * from inicio order by id desc limit 5";
+    var query = "select * from inicio order by id desc limit 1";
     var rows = await pool.query(query);
     return rows;
 }
