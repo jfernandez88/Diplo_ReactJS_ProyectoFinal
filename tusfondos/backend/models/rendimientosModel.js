@@ -1,7 +1,7 @@
 var pool = require('./bd');
 
 async function getRendimientos(){
-    var query = "select * from rendimientos order by rendimiento desc limit 10";
+    var query = "select * from rendimientos order by rendimiento desc limit 30";
     var rows = await pool.query(query);
     return rows;
 }
